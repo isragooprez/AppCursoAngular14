@@ -289,6 +289,194 @@ const myRect = new Rectanglet(10,20);
 console.log('getArea por implement interface: '+myRect.getArea());
 
 
+//Override
+console.log('Override :::::::::::::::::::::::::::::::::::::::::::::');
+
+interface Shape {
+  getArea: () => number;
+}
+
+class Rectangle implements Shape {
+  // using protected for these members allows access from classes that extend from this class, such as Square
+  public constructor(protected readonly width: number, protected readonly height: number) {}
+
+  public getArea(): number {
+    return this.width * this.height;
+  }
+
+  public toString(): string {
+    return `Rectangle[width=${this.width}, height=${this.height}]`;
+  }
+}
+
+class Square extends Rectangle {
+  public constructor(width: number) {
+    super(width, width);
+  }
+
+  // this toString replaces the toString from Rectangle
+  public override toString(): string {
+    return `Square[width=${this.width}]`;
+  }
+}
+
+//const Square rec= new Square(5);
+//console.log('Override: '+rec.toString());
+
+
+
+//Abstract Classes
+console.log('Abstract Classes :::::::::::::::::::::::::::::::::::::::::::::');
+abstract class Polygonabs {
+  public abstract getArea(): number;
+
+  public toString(): string {
+    return `Polygon[area=${this.getArea()}]`;
+  }
+}
+
+class Rectangleabs extends Polygonabs {
+  public constructor(protected readonly width: number, protected readonly height: number) {
+    super();
+  }
+
+  public getArea(): number {
+    return this.width * this.height;
+  }
+}
+
+//const Rectangleabs recabs= new Rectangleabs(8,9);
+//console.log('Rectangleabs: '+recabs.getArea());
+
+
+//Functions
+console.log('Functions :::::::::::::::::::::::::::::::::::::::::::::');
+
+function createPair<S,T>(v1:S, v2:T):[S,T]{
+  return [v1,v2];
+}
+
+console.log(createPair<string, number>('hello',42));
+
+//Classes
+console.log('Classes :::::::::::::::::::::::::::::::::::::::::::::');
+
+class NamedValue<T>{
+
+  private _value: T | undefined;
+
+  constructor(private name:string){}
+
+  public setValue(value:T){
+    this._value=value;
+  }
+
+  public getValue(): T| undefined{
+    return this._value;
+  }
+
+  public toString(): string {
+    return `${this.name}: ${this._value}`;
+  }
+
+}
+
+let value= new NamedValue<number>('myNumber');
+value.setValue(10);
+console.log('CLASSES: '+value.toString());
+
+
+
+
+//Partial
+console.log('Partial :::::::::::::::::::::::::::::::::::::::::::::');
+
+interface Point {
+  x: number;
+  y: number;
+}
+
+let pointPart: Partial<Point> = {}; // `Partial` allows x and y to be optional
+pointPart.x = 10;
+
+console.log('Partial: '+pointPart.x);
+
+//Required
+console.log('Required :::::::::::::::::::::::::::::::::::::::::::::');
+
+interface Carx {
+  make: string;
+  model: string;
+  mileage?: number;
+}
+
+let myCarx: Required<Carx> = {
+  make: 'Ford',
+  model: 'Focus',
+  mileage: 12000 // `Required` forces mileage to be defined
+};
+
+console.log('Required: '+myCarx);
+
+
+//Record
+console.log('Record :::::::::::::::::::::::::::::::::::::::::::::');
+
+const nameAgeMap: Record<string, number> = {
+  'Alice': 21,
+  'Bob': 25
+};
+
+console.log('Record: '+nameAgeMap);
+
+
+//Omit
+console.log('Omit :::::::::::::::::::::::::::::::::::::::::::::');
+interface Person {
+  name: string;
+  age: number;
+  location?: string;
+}
+
+const bob: Omit<Person, 'age' | 'location'> = {
+  name: 'Bob'
+  // `Omit` has removed age and location from the type and they can't be defined here
+};
+
+console.log('Omit: '+bob);
+
+//Pick
+console.log('Pick :::::::::::::::::::::::::::::::::::::::::::::');
+interface Personx {
+  name: string;
+  age: number;
+  location?: string;
+}
+
+const bobx: Pick<Personx, 'name'> = {
+  name: 'Bob'
+  // `Pick` has only kept name, so age and location were removed from the type and they can't be defined here
+};
+console.log('Pick: '+bobx.name);
+
+//Exclude
+console.log('Exclude :::::::::::::::::::::::::::::::::::::::::::::');
+type Primitive = string | number | boolean
+const valueg: Exclude<Primitive, string> = true; // a string cannot be used here since Exclude removed it from the type.
+
+console.log('Exclude: '+typeof valueg);
+
+//Parameters
+console.log('Parameters :::::::::::::::::::::::::::::::::::::::::::::');
+type PointPrinter = (p: { x: number; y: number; }) => void;
+const point: Parameters<PointPrinter>[0] = {
+  x: 10,
+  y: 20
+};
+
+console.log('Parameters: '+point);
+
+
 
 
 
