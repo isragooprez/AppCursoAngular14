@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {PersonasComponent} from "./personas/personas.component";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -39,6 +40,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h3')?.textContent).toContain('Saludos ISRAGOO PREZ');
+  });
+
+  it(`should render firma 'isragoo.prez KRACK'`,()=>{
+    const  fixture = TestBed.createComponent(PersonasComponent);
+    fixture.detectChanges();
+    const compiled= fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('mark')?.textContent).toContain('isragoo.prez KRACK')
   });
 
 });

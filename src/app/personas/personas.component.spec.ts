@@ -41,11 +41,6 @@ describe('PersonaComponent', () => {
     expect(compiled.querySelector('h2')?.textContent).toContain('LISTA DE PERSONAS');
   });
 
-  it(`should render firma 'isragoo.prez KRACK'`,()=>{
-   const  fixture = TestBed.createComponent(PersonasComponent);
-   fixture.detectChanges();
-   const compiled= fixture.nativeElement as HTMLElement;
-   expect(compiled.querySelector('firma')?.textContent).toContain('isragoo.prez KRACK')
-  });
+
 
 });
