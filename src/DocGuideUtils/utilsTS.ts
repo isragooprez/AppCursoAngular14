@@ -81,9 +81,10 @@ car.model='sedan';
 car.year=2010;
 console.log(car);
 
-const nameAgeMap: { [index: string]: number } = {};
-nameAgeMap.Jack = 25; // no error
-console.log(nameAgeMap);
+// const nameAgeMapg: { [index: string]: number } = {};
+// nameAgeMapg.Jack = 25; // no error
+// nameAgeMapg.Mark = 10;
+// console.log(nameAgeMapg);
 
 const cars: { type: string, mileage?: number } = { // no error
   type: "Toyota"
@@ -128,29 +129,29 @@ const carro: Carro = {
 };
 console.log(carro);
 
-interface Rectangle {
-  height: number,
-  width: number
-}
+// interface Rectangle {
+//   height: number,
+//   width: number
+// }
+//
+// const rectangle: Rectangle = {
+//   height: 20,
+//   width: 10
+// };
 
-const rectangle: Rectangle = {
-  height: 20,
-  width: 10
-};
+// console.log(rectangle);
+//
+// interface ColoredRectangle extends Rectangle {
+//   color: string
+// }
+//
+// const coloredRectangle: ColoredRectangle = {
+//   height: 20,
+//   width: 10,
+//   color: "red"
+// };
 
-console.log(rectangle);
-
-interface ColoredRectangle extends Rectangle {
-  color: string
-}
-
-const coloredRectangle: ColoredRectangle = {
-  height: 20,
-  width: 10,
-  color: "red"
-};
-
-console.log(coloredRectangle);
+//onsole.log(coloredRectangle);
 
 //Union | (OR)
 console.log('//Union | (OR)  ::::::::::::::::::::::::::::::::::::::::');
@@ -191,8 +192,8 @@ console.log('function add: '+add(4,8,6));
 
 //Casting with as
 console.log('//Casting with as  ::::::::::::::::::::::::::::::::::::::::');
-let x: unknown = 'hello';
-console.log(('Casting: '+x as string).length);
+let xx: unknown = 'hello';
+console.log(('Casting: '+xx as string).length);
 
 let x2: unknown = 4;
 console.log((x2 as string).length);
@@ -208,14 +209,14 @@ console.log(((x4 as unknown) as string).length);
 
 console.log('////TypeScript Classes  ::::::::::::::::::::::::::::::::::::::::');
 
-class Person {
-  name: string;
-}
-
-const person = new Person();
-person.name = "Jane";
-
-console.log(person);
+// class Person {
+//   name: string;
+// }
+//
+// const person = new Person();
+// person.name = "Jane";
+//
+// console.log(person);
 
 
 

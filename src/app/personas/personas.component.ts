@@ -1,8 +1,5 @@
 import { Component } from "@angular/core";
 
-
-
-
 @Component({
   selector:'app-personas',
   templateUrl:'./personas.component.html',
@@ -10,8 +7,9 @@ import { Component } from "@angular/core";
 })
 
 export class PersonasComponent{
-  titulo= 'MUDULO PERSONAS';
 
+  title='Personas';
+  titulo= 'MUDULO PERSONAS';
   listaPersonasTitle='LISTA DE PERSONAS';
 
 }

@@ -4,7 +4,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-estudiante',
   templateUrl: './estudiante.component.html',
   // template: '<p>estudiante works!</p><app-personas></app-personas>',
+  // styles:¨{},
   styleUrls: ['./estudiante.component.css']
+
 })
 export class EstudianteComponent implements OnInit {
 
@@ -12,5 +14,7 @@ export class EstudianteComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  title='Estudiante';
 
 }

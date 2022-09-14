@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-persona',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonaComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  title = 'Persona';
+  titulo = 'MUDULO PERSONAS';
+  personaTitle = 'CREAR PERSONA';
+
+  nombre: string = 'Israel';
+  apellido: string = 'Perez';
+  edad: number = 33;
+
+
+  getEdad(): number {
+    return this.edad;
   }
 
 }
