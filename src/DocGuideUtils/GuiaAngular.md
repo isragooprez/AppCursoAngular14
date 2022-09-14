@@ -5,16 +5,19 @@
 `ng generate component estudiante`
 
 `ng g c estudiante` Metodo abreviado
-## Instalar complementos 
+> ## Instalar complementos 
 (--save permite guardar y genera la referencias en el app.module)
-### Instalar BOOTSTRAP
+> ### Instalar BOOTSTRAP
 `npm install bootstrap --save`
+
 `npm install bootstrap`
-### Instalar JQUERY
+> ### Instalar JQUERY
 `npm install jquery --save`
+
 `npm install jquery`
-### Instalar POPPER
+> ### Instalar POPPER
 `npm install popper.js --save`
+
 `npm install popper.js`
 
 
