@@ -2,6 +2,10 @@
   <div class="row">
     <div class="col">
       <p>{{listaPersonasTitle}}</p>
+      <button class='btn btn-primary' [disabled]='deshabilitar'
+              (click)='agregarPersona()'> Agregar Persona
+      </button>
+      <p> {{mensaje}}</p>
     </div>
   </div>
 </div>
