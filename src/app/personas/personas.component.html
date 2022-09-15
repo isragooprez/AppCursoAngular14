@@ -6,6 +6,10 @@
               (click)='agregarPersona()'> Agregar Persona
       </button>
       <p> {{mensaje}}</p>
+
+      <label>Título Persona</label>
+      <input type="text" class="form-control" (input)="modificarTitulo($event)">
+      {{valorInput}}
     </div>
   </div>
 </div>

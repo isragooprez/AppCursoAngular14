@@ -1,5 +1,7 @@
 import {Component} from "@angular/core";
 
+
+
 @Component({
   selector: 'app-personas',
   templateUrl: './personas.component.html',
@@ -13,8 +15,16 @@ export class PersonasComponent {
   listaPersonasTitle = 'LISTA DE PERSONAS';
   deshabilitar = false;
   mensaje = 'No se ha agregado ninguna persona';
+  valorInput = '';
 
   agregarPersona() {
     this.mensaje = 'Persona agregada';
+  }
+
+  modificarTitulo(event:Event) {
+
+    console.log('Ingresadon al evento input event');
+    this.valorInput=(<HTMLInputElement>event.target).value;
+
   }
 }
