@@ -15,7 +15,7 @@ export class PersonasComponent {
   listaPersonasTitle = 'LISTA DE PERSONAS';
   deshabilitar = false;
   mensaje = 'No se ha agregado ninguna persona';
-  valorInput = '';
+  valorInput = 'Two binding property  and event';
 
   agregarPersona() {
     this.mensaje = 'Persona agregada';
