@@ -7,6 +7,9 @@
 `ng g c estudiante` Metodo abreviado
 > ## Instalar complementos 
 (--save permite guardar y genera la referencias en el app.module)
+
+`npm install bootstrap jquery popper.js --save`
+
 > ### Instalar BOOTSTRAP
 `npm install bootstrap --save`
 

@@ -14,7 +14,6 @@ export class PersonaComponent implements OnInit {
   }
 
   title = 'Persona';
-  titulo = 'MUDULO PERSONAS';
   personaTitle = 'CREAR PERSONA';
 
   nombre: string = 'Israel';
