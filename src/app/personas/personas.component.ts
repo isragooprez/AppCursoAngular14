@@ -17,6 +17,9 @@ export class PersonasComponent {
   valorInput = 'Two binding property  and event';
   mostrar = false;
 
+  nombreInput:string = '';
+  apellidoInput:string = '';
+
   agregarPersona() {
     this.mostrar = true;
     this.mensaje = 'Persona agregada';
@@ -28,6 +31,10 @@ export class PersonasComponent {
     this.valorInput = (<HTMLInputElement>event.target).value;
 
   }
+  createPersona(){
+    let persona1 = new Person(this.nombreInput, this.apellidoInput);
+    this.people.push( persona1 );
+  }
 
   people: Person[]=[new Person('Juan','Quito'),
     new Person('Carlos','Freire'),
@@ -38,5 +45,6 @@ export class PersonasComponent {
     new Person('Maria','Bermeo'),
 
   ];
+
 
 }
