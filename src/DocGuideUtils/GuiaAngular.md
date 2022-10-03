@@ -2,9 +2,11 @@
 #  COMANDOS ANGULAR
 ### Crea un componente y sus dependencias como app.module
 
-`ng generate component estudiante`
+* `ng generate component estudiante`
+* `ng g c estudiante` Metodo abreviado
+* `ng g c persona --skipTest=true`
 
-`ng g c estudiante` Metodo abreviado
+
 > ## Instalar complementos 
 (--save permite guardar y genera la referencias en el app.module)
 
@@ -22,5 +24,13 @@
 `npm install popper.js --save`
 
 `npm install popper.js`
+
+> ### Configurar para no inicializar los objetos
+***  Modificar el archivo (./tsconfig.json)
+````json
+"compilerOptions": {
+    "strictPropertyInitialization": false,
+}
+````
 
 

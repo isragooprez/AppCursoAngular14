@@ -3,8 +3,17 @@
 
   <div class="container">
     <mark>{{ saludos }}</mark>
+    <app-personas>
+    </app-personas>
+    <app-formulario
+      (personaCreada)="personaAgregada($event)"
+    >
+    </app-formulario>
+    <app-persona *ngFor="let personElement of people let i = index "
+                 [person]="personElement"
+                 [index]="i">
+    </app-persona>
 
-    <app-personas></app-personas>
     <mark>isragoo.prez KRACK</mark>
   </div>
 </div>

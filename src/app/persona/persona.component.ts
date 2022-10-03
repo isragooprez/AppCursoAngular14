@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Person} from "./person.model";
 
 @Component({
   selector: 'app-persona',
@@ -19,6 +20,10 @@ export class PersonaComponent implements OnInit {
   nombre: string = 'Israel';
   apellido: string = 'Perez';
   edad: number = 33;
+  @Input() person: Person;
+  @Input() index: number;
+
+
 
 
   getEdad(): number {
