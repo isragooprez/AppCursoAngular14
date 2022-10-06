@@ -1,17 +1,21 @@
-import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, ViewChild} from '@angular/core';
 import {Person} from "../persona/person.model";
+import {LoggingService} from "../Logging.service";
+import {PersonasService} from "../personas.service";
 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css']
+  styleUrls: ['./formulario.component.css'],
+
 })
 export class FormularioComponent implements OnInit {
 
-  constructor() {
+  constructor(private logginService: LoggingService,
+              private personasServices: PersonasService) {
   }
 
-  @Output() personaCreada = new EventEmitter<Person>();
+  // @Output() personaCreada = new EventEmitter<Person>();
   @ViewChild('nombreInput') nombreInput: ElementRef;
   @ViewChild('apellidoInput') apellidoInput: ElementRef;
 
@@ -21,10 +25,15 @@ export class FormularioComponent implements OnInit {
 
   createPersona() {
     let persona1 = new Person(this.nombreInput.nativeElement.value, this.apellidoInput.nativeElement.value);
-    //this.people.push( persona1 );
-    this.personaCreada.emit(persona1);
+    this.personasServices.agregarPersona(persona1);
   }
 
+
+  onAgregarPersona() {
+    let persona1 = new Person(this.nombreInput.nativeElement.value, this.apellidoInput.nativeElement.value);
+    this.logginService.enviaMensajeConsola("Enviado Mensaje: " + persona1.name + " " + persona1.surname);
+    this.personasServices.agregarPersona(persona1);
+  }
 
   //PRIMERA FORMA DE RECUPERA DATOS VISTA
   //Two-way binding
@@ -58,8 +67,6 @@ export class FormularioComponent implements OnInit {
   //   let persona1 = new Person(this.nombreInput.nativeElement, this.apellidoInput.nativeElement);
   //   this.personaCreada.emit(persona1);
   // }
-
-
 
 
 }

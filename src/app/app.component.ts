@@ -1,30 +1,28 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Person} from "./persona/person.model";
+import {LoggingService} from "./Logging.service";
+import {PersonasService} from "./personas.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'CURSO ANGULAR 14';
   saludos = 'POR: ISRAGOO PREZ';
   valorInput = 'Two binding property  and event';
 
 
-  people: Person[] = [new Person('Juan', 'Quito'),
-    new Person('Carlos', 'Freire'),
-    new Person('Pedro', 'Ullauri'),
-    new Person('Maria', 'Perez'),
-    new Person('Marco', 'Ramos'),
-    new Person('Hernan', 'Bermeo'),
-    new Person('Maria', 'Bermeo'),
-  ];
+  people: Person[] = [];
 
-  personaAgregada(persona: Person) {
-    this.people.push(persona);
-
+  constructor(private loggingService: LoggingService, private personasServices: PersonasService) {
   }
+
+  ngOnInit(): void {
+    this.people= this.personasServices.people;
+    }
+
 
 
 }

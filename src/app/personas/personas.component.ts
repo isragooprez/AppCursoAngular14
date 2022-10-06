@@ -17,15 +17,7 @@ export class PersonasComponent {
   mostrar = false;
   valorInput = 'Two binding property  and event';
 
-  // people: Person[] = [new Person('Juan', 'Quito'),
-  //   new Person('Carlos', 'Freire'),
-  //   new Person('Pedro', 'Ullauri'),
-  //   new Person('Maria', 'Perez'),
-  //   new Person('Marco', 'Ramos'),
-  //   new Person('Hernan', 'Bermeo'),
-  //   new Person('Maria', 'Bermeo'),
-  //
-  // ];
+
 
   agregarPersona() {
     this.mostrar = true;
