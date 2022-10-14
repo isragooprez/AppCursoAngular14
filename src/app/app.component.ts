@@ -16,12 +16,19 @@ export class AppComponent implements OnInit{
 
   people: Person[] = [];
 
-  constructor(private loggingService: LoggingService, private personasServices: PersonasService) {
+  constructor(private loggingService: LoggingService,
+              private personasServices: PersonasService) {
   }
 
   ngOnInit(): void {
     this.people= this.personasServices.people;
     }
+
+
+  // onAgregarPersona() {
+  //   let persona1 = new Person("David","Rodriguez");
+  //   this.personasServices.agregarPersona(persona1);
+  // }
 
 
 

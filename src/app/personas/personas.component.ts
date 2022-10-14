@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {Person} from "../persona/person.model";
+import {LoggingService} from "../Logging.service";
 
 @Component({
   selector: 'app-personas',
@@ -22,6 +23,7 @@ export class PersonasComponent {
   agregarPersona() {
     this.mostrar = true;
     this.mensaje = 'Persona agregada';
+
   }
 
   modificarTitulo(event: Event) {

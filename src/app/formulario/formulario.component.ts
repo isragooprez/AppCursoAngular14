@@ -31,8 +31,12 @@ export class FormularioComponent implements OnInit {
 
   onAgregarPersona() {
     let persona1 = new Person(this.nombreInput.nativeElement.value, this.apellidoInput.nativeElement.value);
-    this.logginService.enviaMensajeConsola("Enviado Mensaje: " + persona1.name + " " + persona1.surname);
     this.personasServices.agregarPersona(persona1);
+
+
+
+
+    // this.logginService.enviaMensajeConsola("Formulario.component:"+"Enviado Mensaje: " + persona1.name + " " + persona1.surname);
   }
 
   //PRIMERA FORMA DE RECUPERA DATOS VISTA
