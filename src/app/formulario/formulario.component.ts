@@ -20,24 +20,22 @@ export class FormularioComponent implements OnInit {
   }
 
   // @Output() personaCreada = new EventEmitter<Person>();
-  @ViewChild('nombreInput') nombreInput: ElementRef;
-  @ViewChild('apellidoInput') apellidoInput: ElementRef;
+  // @ViewChild('nombreInput') nombreInput: ElementRef;
+  // @ViewChild('apellidoInput') apellidoInput: ElementRef;
 
+    nombreInput: string = '';
+    apellidoInput: string = '';
 
   ngOnInit(): void {
   }
 
   createPersona() {
-    let persona1 = new Person(this.nombreInput.nativeElement.value, this.apellidoInput.nativeElement.value);
+    let persona1 = new Person(this.nombreInput, this.apellidoInput);
     this.personasServices.agregarPersona(persona1);
   }
-
-
   onAgregarPersona() {
-    let persona1 = new Person(this.nombreInput.nativeElement.value, this.apellidoInput.nativeElement.value);
+    let persona1 = new Person(this.nombreInput, this.apellidoInput);
     this.personasServices.agregarPersona(persona1);
-
-
     // this.logginService.enviaMensajeConsola("Formulario.component:"+"Enviado Mensaje: " + persona1.name + " " + persona1.surname);
   }
 

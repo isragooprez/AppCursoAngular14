@@ -8,7 +8,7 @@ import {PersonasService} from "./personas.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'CURSO ANGULAR 14';
   saludos = 'POR: ISRAGOO PREZ';
   valorInput = 'Two binding property  and event';
@@ -21,15 +21,14 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.people= this.personasServices.people;
-    }
+    this.people = this.personasServices.people;
+  }
 
 
   // onAgregarPersona() {
   //   let persona1 = new Person("David","Rodriguez");
   //   this.personasServices.agregarPersona(persona1);
   // }
-
 
 
 }

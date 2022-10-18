@@ -1,34 +1,43 @@
-<form action="">
-  <div class="form-group col-md-2">
-    <!--          <label for="nombre" class="sr-only">Nombre</label>-->
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre"
-           class="form-control"
-           #nombreInput
-    >
-    <!--  Local References #apellidoInput-->
-    <!--    #nombreInput-->
-    <!--    [comment]Two-way binding-->
-    <!--           [(ngModel)]=""-->
-
-
-  </div>
-
-<!--  Local References #apellidoInput-->
-  <div class="form-group col-md-2">
-    <!--          <label for="apellido" class="sr-only">Apellido</label>-->
-    <input type="text" name="apellido" id="apellido" placeholder="Apellido"
-           class="form-control"
-           #apellidoInput
-    >
-    <!--  Local References #apellidoInput-->
-    <!--    #apellidoInput-->
-    <!--    [comment]Two-way binding-->
-    <!--    [(ngModel)]="apellidoInput"  -->
-  </div>
-  <div class="col">
-    <button type="submit" class="btn btn-primary" (click)="onAgregarPersona()">
-      Agregar
-    </button>
-  </div>
+<form class="item" action="">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre"  [(ngModel)]="nombreInput">
+    <input type="text" name="apellido" id="apellido" placeholder="Apellido" [(ngModel)]="apellidoInput">
+    <button type="submit" (click)="onAgregarPersona()">+</button>
 </form>
 <hr>
+
+
+
+<!--<form class="form-row" action="">-->
+<!--  <div class="form-group col-md-2">-->
+<!--    &lt;!&ndash;          <label for="nombre" class="sr-only">Nombre</label>&ndash;&gt;-->
+<!--    <input type="text" name="nombre" id="nombre" placeholder="Nombre"-->
+<!--           class="form-control"-->
+<!--           #nombreInput-->
+<!--    >-->
+<!--    &lt;!&ndash;  Local References #apellidoInput&ndash;&gt;-->
+<!--    &lt;!&ndash;    #nombreInput&ndash;&gt;-->
+<!--    &lt;!&ndash;    [comment]Two-way binding&ndash;&gt;-->
+<!--    &lt;!&ndash;           [(ngModel)]=""&ndash;&gt;-->
+
+
+<!--  </div>-->
+
+<!--  &lt;!&ndash;  Local References #apellidoInput&ndash;&gt;-->
+<!--  <div class="form-group col-md-2">-->
+<!--    &lt;!&ndash;          <label for="apellido" class="sr-only">Apellido</label>&ndash;&gt;-->
+<!--    <input type="text" name="apellido" id="apellido" placeholder="Apellido"-->
+<!--           class="form-control"-->
+<!--           #apellidoInput-->
+<!--    >-->
+<!--    &lt;!&ndash;  Local References #apellidoInput&ndash;&gt;-->
+<!--    &lt;!&ndash;    #apellidoInput&ndash;&gt;-->
+<!--    &lt;!&ndash;    [comment]Two-way binding&ndash;&gt;-->
+<!--    &lt;!&ndash;    [(ngModel)]="apellidoInput"  &ndash;&gt;-->
+<!--  </div>-->
+<!--  <div class="col">-->
+<!--    <button type="submit" class="btn btn-primary" (click)="onAgregarPersona()">-->
+<!--      Agregar-->
+<!--    </button>-->
+<!--  </div>-->
+<!--</form>-->
+<!--<hr>-->

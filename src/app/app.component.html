@@ -1,18 +1,17 @@
-<div style="text-align: center">
+<div id="heading"   class="box" style="text-align: center">
   <span>{{ title }} app is running!</span>
+</div>
 
-  <div class="container">
-    <mark>{{ saludos }}</mark>
-    <app-personas>
-    </app-personas>
-    <app-formulario></app-formulario>
-    <app-persona *ngFor="let personElement of people let i = index "
-                 [person]="personElement"
-                 [index]="i">
-    </app-persona>
+<div class="box">
+  <app-personas></app-personas>
+  <app-persona *ngFor="let personElement of people let i = index "
+               [person]="personElement"
+               [index]="i">
+  </app-persona>
+  <mark>isragoo.prez KRACK</mark>
+</div>
 
-
-    <mark>isragoo.prez KRACK</mark>
-  </div>
+<div class="box">
+  <app-formulario></app-formulario>
 </div>
 
